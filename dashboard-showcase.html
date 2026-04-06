@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Resolution Analytics Dashboard — Screenshots</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0079f2 0%, #6e40c9 100%);
+      padding: 48px 40px 40px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+    }
+    .stat {
+      padding: 18px 36px;
+      text-align: center;
+      border-right: 1px solid #30363d;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0079f2;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: #8b949e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 20px 40px;
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      justify-content: center;
+    }
+    .toc a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      transition: background 0.15s;
+    }
+    .toc a:hover { background: #21262d; }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 40px 24px 60px; }
+
+    .section {
+      margin-bottom: 56px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #21262d;
+    }
+    .section-num {
+      background: #0079f2;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .section-desc {
+      font-size: 0.83rem;
+      color: #8b949e;
+      margin-top: 2px;
+    }
+
+    .screenshot-frame {
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      background: #161b22;
+    }
+    .screenshot-topbar {
+      background: #21262d;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid #30363d;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .screenshot-url {
+      margin-left: 10px;
+      font-size: 0.72rem;
+      color: #8b949e;
+      background: #161b22;
+      padding: 2px 10px;
+      border-radius: 4px;
+      border: 1px solid #30363d;
+    }
+    .screenshot-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .highlight {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .highlight-label {
+      font-size: 0.7rem;
+      color: #8b949e;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+    }
+    .highlight-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #e6edf3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      border-top: 1px solid #21262d;
+      color: #8b949e;
+      font-size: 0.8rem;
+    }
+    footer strong { color: #e6edf3; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Case Resolution Analytics Dashboard</h1>
+  <p>Enterprise-grade BI dashboard analyzing 50,000 support cases across departments, priorities, customer tiers, and financial metrics.</p>
+  <div class="badges">
+    <span class="badge">React + Vite</span>
+    <span class="badge">Express 5 API</span>
+    <span class="badge">PostgreSQL</span>
+    <span class="badge">Recharts</span>
+    <span class="badge">TanStack Table</span>
+    <span class="badge">TypeScript</span>
+    <span class="badge">pnpm Monorepo</span>
+    <span class="badge">OpenAPI 3.1</span>
+  </div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-value">50,000</div>
+    <div class="stat-label">Total Cases</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">$125.9M</div>
+    <div class="stat-label">Total Case Cost</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">6</div>
+    <div class="stat-label">Dashboard Tabs</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">16</div>
+    <div class="stat-label">API Endpoints</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">100.5 hrs</div>
+    <div class="stat-label">Avg Resolution</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">50.1%</div>
+    <div class="stat-label">Escalation Rate</div>
+  </div>
+</div>
+
+<div class="toc">
+  <a href="#overview">1. Overview</a>
+  <a href="#department">2. Department Analysis</a>
+  <a href="#priority">3. Priority &amp; Escalation</a>
+  <a href="#customer">4. Customer Insights</a>
+  <a href="#financial">5. Financial Analytics</a>
+  <a href="#explorer">6. Case Explorer</a>
+</div>
+
+<main>
+
+  <!-- 1. OVERVIEW -->
+  <div class="section" id="overview">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div>
+        <div class="section-title">Overview</div>
+        <div class="section-desc">10 KPI cards, case volume time series, status distribution donut chart</div>
+      </div>
+    </div>
+    <div class="screenshot-frame">
+      <div class="screenshot-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="screenshot-url">case-resolution-dashboard /</span>
+      </div>
+      <img src="01-overview.jpg" alt="Overview page screenshot" />
+    </div>
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-label">Total Cases</div><div class="highlight-value">50,000</div></div>
+      <div class="highlight"><div class="highlight-label">Open Cases</div><div class="highlight-value">8,232</div></div>
+      <div class="highlight"><div class="highlight-label">Resolved</div><div class="highlight-value">16,835</div></div>
+      <div class="highlight"><div class="highlight-label">Escalated</div><div class="highlight-value">29,252</div></div>
+      <div class="highlight"><div class="highlight-label">Avg Resolution</div><div class="highlight-value">100.5 hrs</div></div>
+      <div class="highlight"><div class="highlight-label">SLA Breach Rate</div><div class="highlight-value">76.1%</div></div>
+    </div>
+  </div>
+
+  <!-- 2. DEPARTMENT -->
+  <div class="section" id="department">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div>
+        <div class="section-title">Department Analysis</div>
+        <div class="section-desc">SLA compliance, resolution time percentiles (P50/P95), full department comparison table</div>
+      </div>
+    </div>
+    <div class="screenshot-frame">
+      <div class="screenshot-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="screenshot-url">case-resolution-dashboard /department</span>
+      </div>
+      <img src="02-department.jpg" alt="Department Analysis page screenshot" />
+    </div>
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-label">Departments</div><div class="highlight-value">5</div></div>
+      <div class="highlight"><div class="highlight-label">Largest Dept</div><div class="highlight-value">Support (10,144)</div></div>
+      <div class="highlight"><div class="highlight-label">Best CSAT</div><div class="highlight-value">Compliance (3.02)</div></div>
+      <div class="highlight"><div class="highlight-label">Highest Cost</div><div class="highlight-value">Support ($25.6M)</div></div>
+    </div>
+  </div>
+
+  <!-- 3. PRIORITY -->
+  <div class="section" id="priority">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div>
+        <div class="section-title">Priority &amp; Escalation</div>
+        <div class="section-desc">Priority distribution by volume, escalation rates per department</div>
+      </div>
+    </div>
+    <div class="screenshot-frame">
+      <div class="screenshot-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="screenshot-url">case-resolution-dashboard /priority</span>
+      </div>
+      <img src="03-priority.jpg" alt="Priority and Escalation page screenshot" />
+    </div>
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-label">Priority Levels</div><div class="highlight-value">Critical / High / Medium / Low</div></div>
+      <div class="highlight"><div class="highlight-label">Escalation Rate</div><div class="highlight-value">50.1% overall</div></div>
+      <div class="highlight"><div class="highlight-label">Highest Escalation</div><div class="highlight-value">Technical dept</div></div>
+    </div>
+  </div>
+
+  <!-- 4. CUSTOMER -->
+  <div class="section" id="customer">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div>
+        <div class="section-title">Customer Insights</div>
+        <div class="section-desc">Satisfaction score distribution by tier, country-level breakdown with CSAT and escalation rates</div>
+      </div>
+    </div>
+    <div class="screenshot-frame">
+      <div class="screenshot-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="screenshot-url">case-resolution-dashboard /customer</span>
+      </div>
+      <img src="04-customer.jpg" alt="Customer Insights page screenshot" />
+    </div>
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-label">Tiers</div><div class="highlight-value">Platinum / Gold / Silver / Standard</div></div>
+      <div class="highlight"><div class="highlight-label">Countries</div><div class="highlight-value">6 (India, USA, UK, Canada, Germany, Singapore)</div></div>
+      <div class="highlight"><div class="highlight-label">Best CSAT Country</div><div class="highlight-value">India &amp; USA (3.01)</div></div>
+    </div>
+  </div>
+
+  <!-- 5. FINANCIAL -->
+  <div class="section" id="financial">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div>
+        <div class="section-title">Financial Analytics</div>
+        <div class="section-desc">Total &amp; average cost by department, min/max cost breakdown table</div>
+      </div>
+    </div>
+    <div class="screenshot-frame">
+      <div class="screenshot-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="screenshot-url">case-resolution-dashboard /financial</span>
+      </div>
+      <img src="05-financial.jpg" alt="Financial Analytics page screenshot" />
+    </div>
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-label">Total Case Cost</div><div class="highlight-value">$125,972,788</div></div>
+      <div class="highlight"><div class="highlight-label">Avg Cost per Case</div><div class="highlight-value">~$2,519</div></div>
+      <div class="highlight"><div class="highlight-label">Cost Range</div><div class="highlight-value">$10 – $5,000</div></div>
+      <div class="highlight"><div class="highlight-label">Highest Cost Dept</div><div class="highlight-value">Support ($25.6M)</div></div>
+    </div>
+  </div>
+
+  <!-- 6. EXPLORER -->
+  <div class="section" id="explorer">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div>
+        <div class="section-title">Case Explorer</div>
+        <div class="section-desc">Filterable, searchable, paginated table of all 50,000 cases with priority badges</div>
+      </div>
+    </div>
+    <div class="screenshot-frame">
+      <div class="screenshot-topbar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="screenshot-url">case-resolution-dashboard /explorer</span>
+      </div>
+      <img src="06-explorer.jpg" alt="Case Explorer page screenshot" />
+    </div>
+    <div class="highlights">
+      <div class="highlight"><div class="highlight-label">Total Records</div><div class="highlight-value">50,000 cases</div></div>
+      <div class="highlight"><div class="highlight-label">Filters</div><div class="highlight-value">Department, Status, Priority</div></div>
+      <div class="highlight"><div class="highlight-label">Search</div><div class="highlight-value">Full text across all columns</div></div>
+      <div class="highlight"><div class="highlight-label">Pagination</div><div class="highlight-value">10 per page with navigation</div></div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>Case Resolution Analytics Dashboard</strong> &nbsp;·&nbsp;
+  Built with React, Express, PostgreSQL &nbsp;·&nbsp;
+  pnpm monorepo &nbsp;·&nbsp;
+  50,000 case records &nbsp;·&nbsp;
+  16 REST API endpoints
+</footer>
+
+</body>
+</html>
