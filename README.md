@@ -1,8 +1,9 @@
 **Case Resolution Analytics Dashboard**
-
+__________________________________________________________________________________________________________________________________________________________________________________________________________________
 A professional enterprise-grade Business Intelligence dashboard built on a modern pnpm monorepo. Analyze 50,000 support cases to uncover rich insights across departments, priorities, customer tiers, countries, and financial metrics.
 
 **🌐 Project Overview**
+___________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 This dashboard helps organizations monitor, analyze, and optimize case resolution processes with real-time metrics and visualizations. Key features include:
 
@@ -19,7 +20,7 @@ This dashboard helps organizations monitor, analyze, and optimize case resolutio
 **Case Explorer:** Filterable, paginated table for detailed case inspection
 
 **🛠 Tech Stack**
-
+______________________________________________________________________________________________________________________________________________________________________________________________________________
 Layer	Technology
 Monorepo Tool	pnpm workspaces
 Node.js	24
@@ -35,6 +36,7 @@ Build	esbuild (CJS bundle)
 
 
 ** Dashboard Sections**
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
 Overview
 
 10 KPI cards
@@ -81,6 +83,7 @@ Dropdown filters: department, status, priority
 
 
 **📂 Dataset**
+_____________________________________________________________________________________________________________________________________________________________________________________________________________
 Source: attached_assets/final_case_resolution_project_dataset_50k_1775464922238.xlsx
 
 Size: 50,000 cases
