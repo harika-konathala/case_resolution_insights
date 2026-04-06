@@ -1,22 +1,25 @@
-Case Resolution Analytics Dashboard
+**Case Resolution Analytics Dashboard**
+
 A professional enterprise-grade Business Intelligence dashboard built on a modern pnpm monorepo. Analyze 50,000 support cases to uncover rich insights across departments, priorities, customer tiers, countries, and financial metrics.
 
-🌐 Project Overview
+**🌐 Project Overview**
+
 This dashboard helps organizations monitor, analyze, and optimize case resolution processes with real-time metrics and visualizations. Key features include:
 
-Overview: KPIs, time series trends, case status distributions, and category breakdowns
+**Overview:** KPIs, time series trends, case status distributions, and category breakdowns
 
-Department Analysis: Resolution time percentiles, SLA compliance, top assignees
+**Department Analysis:** esolution time percentiles, SLA compliance, top assignees
 
-Priority & Escalation: Priority distribution and escalation rates
+**Priority & Escalation:** Priority distribution and escalation rates
 
-Customer Insights: Tier-based satisfaction scores and country-level analysis
+**Customer Insights:** Tier-based satisfaction scores and country-level analysis
 
-Financial Analytics: Cost breakdown per department
+**Financial Analytics:** Cost breakdown per department
 
-Case Explorer: Filterable, paginated table for detailed case inspection
+**Case Explorer:** Filterable, paginated table for detailed case inspection
 
-🛠 Tech Stack
+**🛠 Tech Stack**
+
 Layer	Technology
 Monorepo Tool	pnpm workspaces
 Node.js	24
@@ -31,7 +34,7 @@ API Codegen	Orval (OpenAPI)
 Build	esbuild (CJS bundle)
 
 
- Dashboard Sections
+** Dashboard Sections**
 Overview
 
 10 KPI cards
@@ -77,7 +80,7 @@ Filterable, paginated table (50k rows)
 Dropdown filters: department, status, priority
 
 
-📂 Dataset
+**📂 Dataset**
 Source: attached_assets/final_case_resolution_project_dataset_50k_1775464922238.xlsx
 
 Size: 50,000 cases
